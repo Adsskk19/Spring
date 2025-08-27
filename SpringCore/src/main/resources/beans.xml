@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean class="com.User" id ="user" scope="prototype"></bean> 
+	
+	<bean id="st" class="com.Student" autowire="constructor">
+	<constructor-arg index="0" value ="282"></constructor-arg>
+	<constructor-arg  index="1" value ="Kiran"></constructor-arg>
+		<!--  <property name="studentId" value="1">
+		 </property> <property name="name" value="Kiran"> </property> -->
+		<!--<property name="address" ref="address1"> </property> -->
+	</bean>
+
+	<!--<bean id="st2" class="com.Student"> <constructor-arg index="0" name="studentId" 
+		value="2"> </constructor-arg> <constructor-arg index="1" name="name" value="Ankam"></constructor-arg> 
+		</bean> -->
+
+	<bean class="com.Address" id="address1">
+	<constructor-arg name="dNo" value="1103451"></constructor-arg>
+		<constructor-arg name="street" value="Surya Nagar"></constructor-arg>
+		<!--  <property name="dNo" value="1103451"></property>
+		<property name="street" value="Surya Nagar"></property>-->
+	</bean>
+	
+	<!--  <bean class="com.Address" id="address">
+		<property name="dNo" value="349076"></property>
+		<property name="street" value="Royal Area"></property>
+	</bean> -->
+
+
+
+	<bean id="emp" class="com.Employee">
+		<property name="empId" value="101">
+		</property>
+		<property name="skills">
+			<set>
+				<value>Java</value>
+				<value>SQL</value>
+				<value>JDBC</value>
+				<value>Hibernate</value>
+				<value>Hibernate</value>
+			</set>
+		</property>
+		<property name="hobbies">
+			<map>
+				<entry key="1" value="cricket">
+				</entry>
+				<entry key="2" value="Badminton">
+				</entry>
+				<entry key="2" value="Tennis">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
+</beans>
+
+
+
